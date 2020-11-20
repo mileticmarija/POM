@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="CT registration" thread-count="1">
+<suite name="CT registration" parallel="tests" thread-count="2">
     <parameter name="ime" value="Marija"/>
     <parameter name="prezime" value="Miletic"/>
     <parameter name="pass" value="mamadu5445"/>
@@ -11,12 +11,11 @@
         <classes>
             <class name="tests.CTcreateAccountTests.CTcreateTestParams">
                 <methods>
-                    <exclude name="wrongCpass"></exclude>
+                    <exclude name="wrongCpass"/>
                 </methods>
             </class>
         </classes>
     </test>
-
     <test name="Submit wrong cPass">
         <parameter name="cPass" value="mamadu"/>
         <parameter name="cMessage" value="Razlikuju se lozinka i potvrda lozinke!"/>
@@ -24,7 +23,7 @@
         <classes>
             <class name="tests.CTcreateAccountTests.CTcreateTestParams"> 
                 <methods>
-                    <exclude name="createCTaccount"></exclude>
+                    <exclude name="createCTaccount"/>
                 </methods>
             </class>
         </classes>
