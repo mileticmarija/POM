@@ -33,9 +33,10 @@ public class CTcreateAccTest {
         ctcp= new CTcreateAccPage(driver);
         ctrp=new CTregisterPage(driver);
         Random r=new Random();
-        int br=r.nextInt(10);
+        int br=r.nextInt(9);
+        String[] chars= {"A","B","C","D","E","F","G","H","I","J"};
 
-        ctcp.createAcc("Marija","Miletic","malac5445"+br+"@gmail.com","mamadu5445");
+        ctcp.createAcc("Marija","Miletic","malac5445"+br+chars[br]+"@gmail.com","mamadu5445");
         ctrp.checkMessage();
     }
 
