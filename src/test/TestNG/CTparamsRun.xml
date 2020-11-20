@@ -17,7 +17,7 @@
         </classes>
     </test>
 
-    <test name="Submit wrong cPass format">
+    <test name="Submit wrong cPass">
         <parameter name="cPass" value="mamadu"/>
         <parameter name="cMessage" value="Razlikuju se lozinka i potvrda lozinke!"/>
 
