@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CT registration" thread-count="1">
+    <parameter name="ime" value="Marija"/>
+    <parameter name="prezime" value="Miletic"/>
+    <parameter name="pass" value="mamadu5445"/>
+    <parameter name="cMessage" value="Hvala na registraciji. Molimo proverite email i aktivirajte Vaš nalog."/>
+
+    <test name="Create account">
+        <classes>
+            <class name="tests.CTcreateAccountTests.CTcreateTestParams"/>
+        </classes>
+    </test>
+</suite>

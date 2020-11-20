@@ -9,14 +9,13 @@ import org.testng.Assert;
 public class CTregisterPage {
     WebDriver driver;
     WebDriverWait wdWait;
-    String cMessage="Hvala na registraciji. Molimo proverite email i aktivirajte Vaš nalog.";
     String result;
     public CTregisterPage(WebDriver driver){
         this.driver=driver;
     }
 
     private By close=By.cssSelector(".soundest-form-background-image-wrapper a ");
-    private By cMessageContainer= By.cssSelector(".alert.alert-success");
+    private By cMessageContainer= By.cssSelector(".alert.alert-success>p");
 
     public String getCmessageText(){
         wdWait=new WebDriverWait(driver,5000);
@@ -25,7 +24,7 @@ public class CTregisterPage {
         return result;
     }
 
-    public void checkMessage(){
+    public void checkMessage(String cMessage){
         getCmessageText();
         Assert.assertEquals(result,cMessage);
     }
