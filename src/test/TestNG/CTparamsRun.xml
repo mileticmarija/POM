@@ -4,11 +4,29 @@
     <parameter name="ime" value="Marija"/>
     <parameter name="prezime" value="Miletic"/>
     <parameter name="pass" value="mamadu5445"/>
+    <parameter name="cPass" value="mamadu5445"/>
     <parameter name="cMessage" value="Hvala na registraciji. Molimo proverite email i aktivirajte Vaš nalog."/>
 
     <test name="Create account">
         <classes>
-            <class name="tests.CTcreateAccountTests.CTcreateTestParams"/>
+            <class name="tests.CTcreateAccountTests.CTcreateTestParams">
+                <methods>
+                    <exclude name="wrongCpass"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Submit wrong email format">
+        <parameter name="cPass" value="mamadu"/>
+        <parameter name="cMessage" value="Razlikuju se lozinka i potvrda lozinke!"/>
+
+        <classes>
+            <class name="tests.CTcreateAccountTests.CTcreateTestParams"> 
+                <methods>
+                    <exclude name="createCTaccount"></exclude>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>

@@ -16,17 +16,22 @@ public class CTregisterPage {
 
     private By close=By.cssSelector(".soundest-form-background-image-wrapper a ");
     private By cMessageContainer= By.cssSelector(".alert.alert-success>p");
+    private By allertMessageContainer=By.cssSelector(".alert.alert-warning");
 
-    public String getCmessageText(){
-        wdWait=new WebDriverWait(driver,5000);
-        wdWait.until(ExpectedConditions.presenceOfElementLocated(cMessageContainer));
-        result=driver.findElement(cMessageContainer).getText();
-        return result;
+      //public String getCmessageText(){
+      //    wdWait=new WebDriverWait(driver,5000);
+      //    wdWait.until(ExpectedConditions.presenceOfElementLocated(cMessageContainer));
+      //    result=driver.findElement(cMessageContainer).getText();
+      //    return result;
+      //}
+
+    public void checkAllertMessage(String allertMessage){
+        Assert.assertEquals(driver.findElement(allertMessageContainer).getText(),allertMessage);
     }
 
     public void checkMessage(String cMessage){
-        getCmessageText();
-        Assert.assertEquals(result,cMessage);
+        //getCmessageText();
+        Assert.assertEquals(driver.findElement(cMessageContainer).getText(),cMessage);
     }
 
 }

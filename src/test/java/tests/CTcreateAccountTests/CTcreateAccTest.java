@@ -36,7 +36,7 @@ public class CTcreateAccTest {
         int br=r.nextInt(9);
         String[] chars= {"A","B","C","D","E","F","G","H","I","J"};
 
-        ctcp.createAcc("Marija","Miletic","malac5445"+br+chars[br]+"@gmail.com","mamadu5445");
+        ctcp.createAcc("Marija","Miletic","malac5445"+br+chars[br]+"@gmail.com","mamadu5445","mamadu5445");
         ctrp.checkMessage("Hvala na registraciji. Molimo proverite email i aktivirajte Vaš nalog.");
     }
 

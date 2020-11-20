@@ -29,18 +29,33 @@ public class CTcreateTestParams {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @Parameters({"ime","prezime","pass", "cMessage"})
+    @Parameters({"ime","prezime","pass","cPass", "cMessage"})
     @Test
-    public void createCTaccount(String ime,String prezime, String pass, String cMessage){
+    public void createCTaccount(String ime,String prezime, String pass,String cPass, String cMessage){
         ctcp= new CTcreateAccPage(driver);
         ctrp=new CTregisterPage(driver);
         Random r=new Random();
         int br=r.nextInt(24);
         String[] chars= {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","X","Y","Z"};
-        String mail="malac5445"+br+chars[br]+"@gmail.com";
+        String mail="malac"+br+chars[br]+"@gmail.com";
 
-        ctcp.createAcc(ime,prezime,mail,pass);
+        ctcp.createAcc(ime,prezime,mail,pass,cPass);
         ctrp.checkMessage(cMessage);
+    }
+
+    @Parameters({"ime","prezime","pass","cPass", "cMessage"})
+    @Test
+    public void wrongCpass(String ime,String prezime, String pass,String cPass, String cMessage){
+        ctcp= new CTcreateAccPage(driver);
+        ctrp=new CTregisterPage(driver);
+        Random r=new Random();
+        int br=r.nextInt(24);
+        String[] chars= {"A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","X","Y","Z"};
+        String mail="malac"+br+chars[br]+"@gmail.com";
+
+        ctcp.createAcc(ime,prezime,mail,pass,cPass);
+        ctrp.checkAllertMessage(cMessage);
+
     }
 
     @AfterMethod

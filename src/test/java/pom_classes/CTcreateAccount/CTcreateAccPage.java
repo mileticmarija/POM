@@ -18,12 +18,12 @@ public class CTcreateAccPage {
     private By send=By.cssSelector("[title='Submit']");
     private By cookie=By.cssSelector("div>button:nth-child(4)");
 
-    public void fillForm(String name, String lastName, String mail, String lozinka){
+    public void fillForm(String name, String lastName, String mail, String lozinka, String clozinka){
         driver.findElement(ime).sendKeys(name);
         driver.findElement(prezime).sendKeys(lastName);
         driver.findElement(email).sendKeys(mail);
         driver.findElement(password).sendKeys(lozinka);
-        driver.findElement(confirmation).sendKeys(lozinka);
+        driver.findElement(confirmation).sendKeys(clozinka);
     }
 
     public void submitData(){
@@ -32,8 +32,8 @@ public class CTcreateAccPage {
         driver.findElement(send).click();
     }
 
-    public void createAcc(String name,String lastName, String mail, String lozinka ){
-        this.fillForm(name,lastName,mail,lozinka);
+    public void createAcc(String name,String lastName, String mail, String lozinka,String clozinka ){
+        this.fillForm(name,lastName,mail,lozinka,clozinka);
         this.submitData();
     }
 
