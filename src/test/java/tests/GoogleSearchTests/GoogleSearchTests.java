@@ -20,6 +20,7 @@ public class GoogleSearchTests {
     GoogleSearchPage gsp;
     GoogleResultPage grp;
 
+
     @BeforeMethod
     public void setup(){
         driverManager= DriverManagerFactory.getDriverManager(DriverType.CHROME);
