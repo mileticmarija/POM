@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Win Win Login" thread-count="1">
+    <parameter name="email" value="malac5445@gmail.com"/>
+    <parameter name="pass" value="test123"/>
+    <parameter name="welcomeM" value="Dobrodošli, Marija Miletic!"/>
+    <parameter name="warrningEmail" value="Molimo unesite ispravnu email adresu. Npr. milanpetrovic@domen.com."/>
+    <parameter name="warrningPass" value="Email adresa ili lozinka nisu validni."/>
+    <parameter name="warrningMsg" value="Ovo je obavezno polje."/>
+    
+    <test name="Successful login">
+        <classes>
+            <class name="tests.WinLoginTests.WinLoginTest">
+                <methods>
+                    <exclude name="submitEmptyFields"/>
+                    <exclude name="submitEmptyEmail"/>
+                    <exclude name="submitEmptyPass"/>
+                    <exclude name="submitwrongEmailFormat"/>
+                    <exclude name="submitwrongPass"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Submit Empty Fields">
+        <parameter name="email" value=""/>
+        <parameter name="pass" value=""/>
+        <classes>
+            <class name="tests.WinLoginTests.WinLoginTest">
+                <methods>
+                    <exclude name="login"/>
+                    <exclude name="submitEmptyEmail"/>
+                    <exclude name="submitEmptyPass"/>
+                    <exclude name="submitwrongEmailFormat"/>
+                    <exclude name="submitwrongPass"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Submit Email empty">
+        <parameter name="email" value=""/>
+        <classes>
+            <class name="tests.WinLoginTests.WinLoginTest">
+                <methods>
+                    <exclude name="login"/>
+                    <exclude name="submitEmptyFields"/>
+                    <exclude name="submitEmptyPass"/>
+                    <exclude name="submitwrongEmailFormat"/>
+                    <exclude name="submitwrongPass"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Submit Pass empty">
+        <parameter name="pass" value=""/>
+        <classes>
+            <class name="tests.WinLoginTests.WinLoginTest">
+                <methods>
+                    <exclude name="login"/>
+                    <exclude name="submitEmptyFields"/>
+                    <exclude name="submitEmptyEmail"/>
+                    <exclude name="submitwrongEmailFormat"/>
+                    <exclude name="submitwrongPass"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Submit wrong email format">
+        <parameter name="email" value="malac5445@"/>
+        <classes>
+            <class name="tests.WinLoginTests.WinLoginTest">
+                <methods>
+                    <exclude name="login"/>
+                    <exclude name="submitEmptyFields"/>
+                    <exclude name="submitEmptyEmail"/>
+                    <exclude name="submitEmptyPass"/>
+                    <exclude name="submitwrongPass"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Submit wrong password">
+        <parameter name="pass" value="test123433"/>
+        <classes>
+            <class name="tests.WinLoginTests.WinLoginTest">
+                <methods>
+                    <exclude name="login"/>
+                    <exclude name="submitEmptyFields"/>
+                    <exclude name="submitEmptyEmail"/>
+                    <exclude name="submitEmptyPass"/>
+                    <exclude name="submitwrongEmailFormat"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
