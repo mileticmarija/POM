@@ -12,27 +12,19 @@
         <classes>
             <class name="tests.WinLoginTests.WinLoginTest">
                 <methods>
-                    <exclude name="submitEmptyFields"/>
-                    <exclude name="submitEmptyEmail"/>
-                    <exclude name="submitEmptyPass"/>
-                    <exclude name="submitwrongEmailFormat"/>
-                    <exclude name="submitwrongPass"/>
+                    <include name="login"/>
                 </methods>
             </class>
         </classes>
     </test>
 
-    <test name="Submit Empty Fields">
+   <test name="Submit Empty Fields">
         <parameter name="email" value=""/>
         <parameter name="pass" value=""/>
         <classes>
             <class name="tests.WinLoginTests.WinLoginTest">
                 <methods>
-                    <exclude name="login"/>
-                    <exclude name="submitEmptyEmail"/>
-                    <exclude name="submitEmptyPass"/>
-                    <exclude name="submitwrongEmailFormat"/>
-                    <exclude name="submitwrongPass"/>
+                    <include name="submitEmptyFields"/>
                 </methods>
             </class>
         </classes>
@@ -43,11 +35,7 @@
         <classes>
             <class name="tests.WinLoginTests.WinLoginTest">
                 <methods>
-                    <exclude name="login"/>
-                    <exclude name="submitEmptyFields"/>
-                    <exclude name="submitEmptyPass"/>
-                    <exclude name="submitwrongEmailFormat"/>
-                    <exclude name="submitwrongPass"/>
+                    <include name="submitEmptyEmail"/>
                 </methods>
             </class>
         </classes>
@@ -58,11 +46,7 @@
         <classes>
             <class name="tests.WinLoginTests.WinLoginTest">
                 <methods>
-                    <exclude name="login"/>
-                    <exclude name="submitEmptyFields"/>
-                    <exclude name="submitEmptyEmail"/>
-                    <exclude name="submitwrongEmailFormat"/>
-                    <exclude name="submitwrongPass"/>
+                    <include name="submitEmptyPass"/>
                 </methods>
             </class>
         </classes>
@@ -73,11 +57,7 @@
         <classes>
             <class name="tests.WinLoginTests.WinLoginTest">
                 <methods>
-                    <exclude name="login"/>
-                    <exclude name="submitEmptyFields"/>
-                    <exclude name="submitEmptyEmail"/>
-                    <exclude name="submitEmptyPass"/>
-                    <exclude name="submitwrongPass"/>
+                    <include name="submitwrongEmailFormat"/>
                 </methods>
             </class>
         </classes>
@@ -88,11 +68,7 @@
         <classes>
             <class name="tests.WinLoginTests.WinLoginTest">
                 <methods>
-                    <exclude name="login"/>
-                    <exclude name="submitEmptyFields"/>
-                    <exclude name="submitEmptyEmail"/>
-                    <exclude name="submitEmptyPass"/>
-                    <exclude name="submitwrongEmailFormat"/>
+                    <include name="submitwrongPass"/>
                 </methods>
             </class>
         </classes>
